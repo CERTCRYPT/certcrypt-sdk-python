@@ -5,6 +5,10 @@ This package follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Entries are one line per change: `type:scope: what changed`, where `type` is
 `feature`, `bugfix`, `breaking`, `deprecation`, `security` or `docs`.
 
+## 1.0.1
+
+* bugfix:Tests: the context snapshot signature test verifies the P-256 half with `ecdsa`, a dependency of the SDK, so `pip install -e ".[dev]"` is enough to run the whole suite
+
 ## 1.0.0
 
 * feature:Settlement: `build_verification_package()` requires `base_certificate`; every package carries it with `verification_context` (verification-package/1), which is what an offline verifier in package mode accepts

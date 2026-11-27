@@ -17,8 +17,8 @@
       "certification": "2026-11-24T1815Z"
     },
     "CHANGELOG.md": {
-      "sha3_256": "21603782797f0c40ad3aa6755feebf9ab248a0e8ee2d72ca8de84a923332ad20",
-      "certification": "2026-11-24T1815Z"
+      "sha3_256": "1986ee6c6a8f1a1ce964bd7a8b34d78ea5ca903f525b947a3ebe765c27e9e06f",
+      "certification": "2026-11-27T0105Z"
     },
     "LICENSE": {
       "sha3_256": "781bb118a03ab698f629da9d9d2cb11112fbb43d8a0af960ad9c4942088ccdc7",
@@ -33,12 +33,12 @@
       "certification": "2026-11-24T1815Z"
     },
     "pyproject.toml": {
-      "sha3_256": "bcaec3547130cf0e38833e15cfdc4ed40857c4785519103ed15000d175024c34",
-      "certification": "2026-11-24T1815Z"
+      "sha3_256": "09f694fd7d8ac1f07e9e78cfc5440c98713ae141b9e1baae4df7d2d6e43686e2",
+      "certification": "2026-11-27T0105Z"
     },
     "src/certcrypt/__init__.py": {
-      "sha3_256": "ebd640a1875e8a67f5f78a306b33569e9fd79c69ea52a8e3e2787aa16f04c5f1",
-      "certification": "2026-11-24T1815Z"
+      "sha3_256": "293aed3587600d842a9a95a9ce01dfdeaa8b662078cc50f58d2342f7eb99baca",
+      "certification": "2026-11-27T0105Z"
     },
     "src/certcrypt/artifacts/__init__.py": {
       "sha3_256": "06a55d6f7e428c1df395114d66797acf4c35794791cc6dc48d36f02e53093914",
@@ -209,8 +209,8 @@
       "certification": "2026-11-24T1815Z"
     },
     "tests/test_context_snapshot_certificate.py": {
-      "sha3_256": "2fb84ff0f48d1f347e9cc11822cae1e2645a676a9257c3400de4f8a5f55d6ee8",
-      "certification": "2026-11-24T1815Z"
+      "sha3_256": "a6810aa687a4cc2369412e904ecc52328b3f1b1f151d28dab8d4bbffdcad6cf5",
+      "certification": "2026-11-27T0105Z"
     },
     "tests/test_context_snapshot_conformance.py": {
       "sha3_256": "63f995485f31571920a4144c857f604d951b67d1c1892c4158f98d39ef56f965",
@@ -290,6 +290,11 @@
       "id": "2026-11-24T1815Z",
       "files": 71,
       "subtree_root": "449debf774d99cc07ad074ccc07db2f11639b8866804ad0fd79e7da9a3879355"
+    },
+    {
+      "id": "2026-11-27T0105Z",
+      "files": 4,
+      "subtree_root": "f251bf623a8f968eb86c0d77b610b4acc0edefcf28ce8521267a73cd2aa5b60b"
     }
   ],
   "repository": "certcrypt-sdk-python",

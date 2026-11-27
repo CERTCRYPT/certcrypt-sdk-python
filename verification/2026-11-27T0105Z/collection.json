@@ -1,0 +1,29 @@
+{
+  "repository": "certcrypt-sdk-python",
+  "certification": "2026-11-27T0105Z",
+  "issued_under": "rules/2026-01",
+  "collection_profile": "subject.collection/1",
+  "leaf_profile": "subject.binary/1",
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "sha3_256": "1986ee6c6a8f1a1ce964bd7a8b34d78ea5ca903f525b947a3ebe765c27e9e06f"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha3_256": "09f694fd7d8ac1f07e9e78cfc5440c98713ae141b9e1baae4df7d2d6e43686e2"
+    },
+    {
+      "path": "src/certcrypt/__init__.py",
+      "sha3_256": "293aed3587600d842a9a95a9ce01dfdeaa8b662078cc50f58d2342f7eb99baca"
+    },
+    {
+      "path": "tests/test_context_snapshot_certificate.py",
+      "sha3_256": "a6810aa687a4cc2369412e904ecc52328b3f1b1f151d28dab8d4bbffdcad6cf5"
+    }
+  ],
+  "declared_cardinality": 4,
+  "collection_root": "79e42c6e5eb67a9f8e8e70b8df80cfbc99af4cc50077c152464b69c6b1823e59",
+  "subtree_root": "f251bf623a8f968eb86c0d77b610b4acc0edefcf28ce8521267a73cd2aa5b60b",
+  "procedure": "verification/README.md"
+}

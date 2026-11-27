@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "certcrypt-sdk"
-version = "1.0.0"
+version = "1.0.1"
 description = "Official issuer-side SDK for CERTCRYPT: certify material with a client-side composite post-quantum signature (ECDSA P-256 + ML-DSA-65), and produce the artifacts that let a third party independently evaluate the result offline under public rules, without either your systems or CERTCRYPT remaining online."
 readme = "README.md"
 license = "Apache-2.0"

@@ -70,19 +70,19 @@ def test_snapshot_certificate_carries_the_snapshot_and_one_committing_subject():
 
 
 def test_snapshot_certificate_signature_verifies_under_its_signer():
-    from cryptography.hazmat.primitives import hashes
-    from cryptography.hazmat.primitives.asymmetric import ec
-    from cryptography.hazmat.primitives.asymmetric.utils import encode_dss_signature
+    # Verified with `ecdsa`, a dependency of the SDK itself: the test needs no
+    # package the SDK does not declare.
     import base64
+    import hashlib
+
+    from ecdsa import NIST256p, VerifyingKey
 
     cert = _mint(SNAPSHOT)
     sig = cert["signatures"][0]
     m_prime = composite_m_prime(sig["alg"], cert["payload_canon_digest_hex"])
     raw = base64.b64decode(sig["signatures"][0]["sig_b64"])
-    pub = ec.EllipticCurvePublicKey.from_encoded_point(
-        ec.SECP256R1(), base64.b64decode(sig["signer"]["pub_p256_b64"]))
-    pub.verify(encode_dss_signature(int.from_bytes(raw[:32], "big"), int.from_bytes(raw[32:], "big")),
-               m_prime, ec.ECDSA(hashes.SHA3_256()))
+    pub = VerifyingKey.from_string(base64.b64decode(sig["signer"]["pub_p256_b64"]), curve=NIST256p)
+    assert pub.verify(raw, m_prime, hashfunc=hashlib.sha3_256)
 
 
 @pytest.mark.parametrize("bad, match", [

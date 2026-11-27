@@ -28,7 +28,7 @@ valid only as the AND of all of them, so exposing one would hand out a way to
 produce something that looks like a signature but carries no post-quantum half.
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 from .artifacts.base_certificate import (
     IssuerKey,
