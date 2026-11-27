@@ -1,0 +1,88 @@
+# Secrets and key material
+# ·················
+# The issuer's keyset seed is the whole identity: whatever holds it must never be
+# committed. These patterns are deliberately broad — a false positive costs one
+# `git add -f`, a false negative is unrecoverable once pushed.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+*.secrets.*
+*.local.*
+
+# Never commit non-public notes
+# ·················
+*.private.*
+*.internal.*
+
+# Build output
+# ·················
+# `dist/` and the wheel are not committed but ARE published: what ships to PyPI
+# is governed by the `[tool.hatch.build.targets.wheel]` packages list in
+# pyproject.toml, not by this file.
+#
+# NOTE the paths: the package lives in `src/certcrypt/`, so these entries are
+# anchored with a leading slash. A bare `lib/` or `build/` would also match
+# anything by that name INSIDE the package, and a source file would drop out of
+# a commit without failing anything locally — it is still on disk, and only
+# whoever cloned the repo would find it missing.
+/build/
+/dist/
+/sdist/
+/wheels/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Python bytecode and caches
+# ·················
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+# ·················
+.venv/
+venv/
+ENV/
+.python-version
+
+# Test and type-checking output
+# ·················
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Logs
+# ·················
+*.log
+
+# Editors and OS
+# ·················
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Scratch
+# ·················
+tmp/
+.tmp/
+*.bak

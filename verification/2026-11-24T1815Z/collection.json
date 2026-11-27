@@ -1,0 +1,297 @@
+{
+  "repository": "certcrypt-sdk-python",
+  "certification": "2026-11-24T1815Z",
+  "issued_under": "rules/2026-01",
+  "collection_profile": "subject.collection/1",
+  "leaf_profile": "subject.binary/1",
+  "files": [
+    {
+      "path": ".github/CODEOWNERS",
+      "sha3_256": "7d0ada84d0092ba2067988989cfd6cc43f1ab127b08671553575cd43cd98fa18"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha3_256": "22e1a000d107a4eba0e1a44e0006b2be75509ba7350f636120dbebfe248f5e37"
+    },
+    {
+      "path": ".gitignore",
+      "sha3_256": "f36d00adbe56ac0dd921cdd1f072805c7059da4d3f3ccfbc4368d093b9bf1ad1"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha3_256": "e7d94673ba343816318a413d3ef299a665f55afd6e6863735da25dc9544cf993"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha3_256": "21603782797f0c40ad3aa6755feebf9ab248a0e8ee2d72ca8de84a923332ad20"
+    },
+    {
+      "path": "LICENSE",
+      "sha3_256": "781bb118a03ab698f629da9d9d2cb11112fbb43d8a0af960ad9c4942088ccdc7"
+    },
+    {
+      "path": "README.md",
+      "sha3_256": "855aebe6e269215538498467d4e461fd2cc51c2d625efc949a5a041f9781e263"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha3_256": "d7fe701a9af0d55298d66f28cfc1efe08ca9a462549c013cc673cb3a67dfc320"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha3_256": "bcaec3547130cf0e38833e15cfdc4ed40857c4785519103ed15000d175024c34"
+    },
+    {
+      "path": "src/certcrypt/__init__.py",
+      "sha3_256": "ebd640a1875e8a67f5f78a306b33569e9fd79c69ea52a8e3e2787aa16f04c5f1"
+    },
+    {
+      "path": "src/certcrypt/artifacts/__init__.py",
+      "sha3_256": "06a55d6f7e428c1df395114d66797acf4c35794791cc6dc48d36f02e53093914"
+    },
+    {
+      "path": "src/certcrypt/artifacts/base_certificate.py",
+      "sha3_256": "4a1345417ed1f54d43d2d29301d3643f683a7a6ff7215b0b871701af5337a53f"
+    },
+    {
+      "path": "src/certcrypt/artifacts/capacity_evidence.py",
+      "sha3_256": "113a95a40eee05a0dcc95d39be9eb46e9878410a52b2382bf97c56dd9a7a139b"
+    },
+    {
+      "path": "src/certcrypt/artifacts/commitment_inclusion.py",
+      "sha3_256": "e47c5b97b967b6b79934ac73091a34efe37cdd4c591539e8175a9867045328bd"
+    },
+    {
+      "path": "src/certcrypt/artifacts/holder_keyset.py",
+      "sha3_256": "69e1c45554a958aeaff57be499eaae41967a85ef7ff32f14dfbd257ac10a4a46"
+    },
+    {
+      "path": "src/certcrypt/artifacts/rfc3339.py",
+      "sha3_256": "b6335b90913ba6c8a91aece89b1fce4ae3af135442bc5932d7d061c3989cfe64"
+    },
+    {
+      "path": "src/certcrypt/client.py",
+      "sha3_256": "36bb5af2b1e7e024041a4fcfcb349d7fa2d21487e2814c347de5f4d9bd493bc3"
+    },
+    {
+      "path": "src/certcrypt/crypto/__init__.py",
+      "sha3_256": "0f746a9ec0a68067f60757c04abd749d23a189ce04a73d29b7be8b132be72ec3"
+    },
+    {
+      "path": "src/certcrypt/crypto/ai_decision.py",
+      "sha3_256": "b855fdb8060d10107f31724cd36526b56f278142a5338aaa9dc665677cbee22f"
+    },
+    {
+      "path": "src/certcrypt/crypto/canonical_subject.py",
+      "sha3_256": "f3c666b359f13ff20607052bd60eb52ca72179b21e30d2f58f480cc91e9ebf00"
+    },
+    {
+      "path": "src/certcrypt/crypto/collection_merkle.py",
+      "sha3_256": "2cd004233fee9df9ed3553e7ee6ce47e2d32726b718bfd9df4e50057a653eee6"
+    },
+    {
+      "path": "src/certcrypt/crypto/composite.py",
+      "sha3_256": "bbeeec7ba8faca8f7309ee2760b528f5cfa2d5e37449ce249df3f911172952d8"
+    },
+    {
+      "path": "src/certcrypt/crypto/digest.py",
+      "sha3_256": "5767a96045b06b50989dc9e19c50d65ebe14b7987bff24b52eb82879e5b22481"
+    },
+    {
+      "path": "src/certcrypt/crypto/ecdsa_p256.py",
+      "sha3_256": "5fe050bb66da3ccb0d9c341c5694f58c16c9b069e810fbae4edf6b8b13575533"
+    },
+    {
+      "path": "src/certcrypt/crypto/jcs.py",
+      "sha3_256": "410505a1639acdc9fa93a556672b1e2d9358b1110e16c5a31005c530bc06e1eb"
+    },
+    {
+      "path": "src/certcrypt/crypto/merkle.py",
+      "sha3_256": "1813f5e954e36ae7a224185029a91b8a10c79961ca0c260e50dc2ee705516e3f"
+    },
+    {
+      "path": "src/certcrypt/crypto/ml_dsa.py",
+      "sha3_256": "0df72147cf194780bff440b488ccb7297633e7003e81f61577def3a4865c8ac0"
+    },
+    {
+      "path": "src/certcrypt/crypto/pseudonym.py",
+      "sha3_256": "a16c15e92ccbb449c8f6ac2e36b0fd54427a5a17726d9313d9f4af75de4ca2fb"
+    },
+    {
+      "path": "src/certcrypt/crypto/strict_json.py",
+      "sha3_256": "6a9ff2e357407e5978eee1a21bfb635b105cc945f3caa835c38f9819af1f6ca6"
+    },
+    {
+      "path": "src/certcrypt/crypto/subject_json_preconditions.py",
+      "sha3_256": "67932458fadc45cc1c422a58ebe32afb698b062a56702e0980733cea8b5d6098"
+    },
+    {
+      "path": "src/certcrypt/issuer.py",
+      "sha3_256": "c88a8800f972ac5ccf6783520a55f74742cb9969ee140a56d44dd245b93facce"
+    },
+    {
+      "path": "src/certcrypt/py.typed",
+      "sha3_256": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a"
+    },
+    {
+      "path": "src/certcrypt/retry.py",
+      "sha3_256": "5094eeed8ab214cf565cd4abd181587b0efdf052961c1cb959cf2dcb7b0d0886"
+    },
+    {
+      "path": "src/certcrypt/types.py",
+      "sha3_256": "72c92225df677dcba2b29bdb7c4f03b8895f3e813db6f9def95e8630ac9e886b"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha3_256": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha3_256": "fcf7cbef2e9403eda5efcc46a55155e23b6e93097eddd7a8c8ab62e05841d87f"
+    },
+    {
+      "path": "tests/test_activation_contract.py",
+      "sha3_256": "f92fe21892c5e37ceeb028e99be4a9ac1b8be0667c54392f91961c145cbe981a"
+    },
+    {
+      "path": "tests/test_ai_decision_builder.py",
+      "sha3_256": "5bb5b663b2339798895a6d2ef7564016d4d0ef8cccc724fe6746b3867ce953e5"
+    },
+    {
+      "path": "tests/test_ai_decision_precondition.py",
+      "sha3_256": "861cdbb6378e39ed3054f350dc68e2c76dd90cf155265c6815dccaa884609bc4"
+    },
+    {
+      "path": "tests/test_artifact_shape_conformance.py",
+      "sha3_256": "fc65d7cb50bbc19df78085e3a2c309b2a419afc80ffc02bc089553cebba7fe4c"
+    },
+    {
+      "path": "tests/test_base_certificate.py",
+      "sha3_256": "578c9333f9e9b9954675e9ecbcf6e1369cd5ce115e74d88d439644917697bbf3"
+    },
+    {
+      "path": "tests/test_canonical_subject.py",
+      "sha3_256": "0fb491c65f4e028189a68f412ea2d724c0ceae7314d3d1d74cb753658fbff7e3"
+    },
+    {
+      "path": "tests/test_client.py",
+      "sha3_256": "9e2521ca2b3d9fb5db5718f2ef63ec24cc785a4dd93d6912e88ae6e21176e2fc"
+    },
+    {
+      "path": "tests/test_client_issuer_auth.py",
+      "sha3_256": "ece9e328d9b21dafaafa5d34422bac4df1c6b00dc4b2f71ebbaf40d875303be8"
+    },
+    {
+      "path": "tests/test_client_retry.py",
+      "sha3_256": "2ba30538cc4f16d0e1eb5c49aa0dff4a54a00cfb2710e613a46d2f9e66aac9e1"
+    },
+    {
+      "path": "tests/test_client_transport.py",
+      "sha3_256": "12d54818cc038b7d9e01c8afdb9c35c01953140c0be8db6790f58e1af05bf55f"
+    },
+    {
+      "path": "tests/test_client_wait.py",
+      "sha3_256": "eea5cbd61d476d7d3d47d3b5bc892ec7493888097e63d0273224241f4d5b06bf"
+    },
+    {
+      "path": "tests/test_collection_merkle.py",
+      "sha3_256": "52422ba5567170c5c2afc72d14050bc316c96e68c146b8f232a9207db9b01345"
+    },
+    {
+      "path": "tests/test_composite.py",
+      "sha3_256": "25791d3710fe76f0a9bd95be88025c3785db471a32ebf304eb6eb6d8f20a816a"
+    },
+    {
+      "path": "tests/test_composite_conformance.py",
+      "sha3_256": "f272cc2c57a87a775b5a9b46d0210e3cb29f7cd5d30ab614d48a0149c26405c1"
+    },
+    {
+      "path": "tests/test_conformance_contract.py",
+      "sha3_256": "588facd7a969e8501e456d7c1ed9b16e768422844784e7b39dbf8bd153a023c6"
+    },
+    {
+      "path": "tests/test_conformance_coverage.py",
+      "sha3_256": "ab937baaa38a49ea14eadc71b1a89193c90e2e61ddc61689c5531ce3fb821329"
+    },
+    {
+      "path": "tests/test_context_snapshot_certificate.py",
+      "sha3_256": "2fb84ff0f48d1f347e9cc11822cae1e2645a676a9257c3400de4f8a5f55d6ee8"
+    },
+    {
+      "path": "tests/test_context_snapshot_conformance.py",
+      "sha3_256": "63f995485f31571920a4144c857f604d951b67d1c1892c4158f98d39ef56f965"
+    },
+    {
+      "path": "tests/test_digest.py",
+      "sha3_256": "e51559d3fc564b3428a912d48922ab86faa29301b056441568bf2bc1e88c9c91"
+    },
+    {
+      "path": "tests/test_ecdsa_p256_deterministic_conformance.py",
+      "sha3_256": "a73fa9468af38291151bd872cdaa0c8f34c204eadd7002b5fde527980ca6bb50"
+    },
+    {
+      "path": "tests/test_emission_recovery.py",
+      "sha3_256": "f8da0666a54a1be51a4ad8d76ad91c11b3bf0ca3789222194ed9122457d5aa97"
+    },
+    {
+      "path": "tests/test_evidence_and_inclusion.py",
+      "sha3_256": "7c03dacf338b2182d14b3f4af9ab6b58a6673aa23ab45405660721693ab3dd34"
+    },
+    {
+      "path": "tests/test_issuer.py",
+      "sha3_256": "b0aef75622b8e075d87180747b3ef7338df2322fd9accc4003cb8fa235083a2b"
+    },
+    {
+      "path": "tests/test_issuer_guards.py",
+      "sha3_256": "e7b74c52d48d7bcd231830f4c7a48fb37fac900a8c52123a556e1ef7497b55b8"
+    },
+    {
+      "path": "tests/test_issuer_key_derivation_conformance.py",
+      "sha3_256": "8465ccf5c0cd39a001389de900a2b06d633320c4167d527d591ca04548173378"
+    },
+    {
+      "path": "tests/test_issuer_read_chain.py",
+      "sha3_256": "0c6f873ee780fadb681c4451953c51229c4d38141f809a05f875bc738e06e533"
+    },
+    {
+      "path": "tests/test_issuer_resolution.py",
+      "sha3_256": "3f1ba6db2d66a66998319d4251fc9f964ab019c0eb689d2fb526bf47f14bbc90"
+    },
+    {
+      "path": "tests/test_jcs.py",
+      "sha3_256": "83c46ca56692a673fd24573508270c1e858fecae05c903e1c7fabc39febf4b86"
+    },
+    {
+      "path": "tests/test_key_derivation_conformance.py",
+      "sha3_256": "ddca1dd42b422cf6807bf66001ac43404750dd7e183bbf2fab92e57f3514c2a7"
+    },
+    {
+      "path": "tests/test_prepare_submit.py",
+      "sha3_256": "649731c93aa10ed75eb8f3e330205625a083153726a246f7ec051df8ebc1dd33"
+    },
+    {
+      "path": "tests/test_pseudonym_and_keyset.py",
+      "sha3_256": "dab2137094223b3744aec1c41c36299671ba7ef51203535a06d19ddf1024cc3c"
+    },
+    {
+      "path": "tests/test_public_surface.py",
+      "sha3_256": "f2182880db588d45486b95ee7edc2e8087bc5539f0c04a47855a310ba3b84a9d"
+    },
+    {
+      "path": "tests/test_retry.py",
+      "sha3_256": "8f9aac234ab93c26ba4a9237dd13b55d62164eff25bf5304ed5f151514d43b24"
+    },
+    {
+      "path": "tests/test_strict_json_conformance.py",
+      "sha3_256": "8c78cd46ce17a02619b73e6b5812ea7cb80a4c6c92240cf3cbffcd6ad0bc7821"
+    },
+    {
+      "path": "tests/vectors/jcs-verifier-parity.json",
+      "sha3_256": "b25a263107d0ab9f688056b630b4625e5ddc2d459ff8c68048238535a1123ff0"
+    }
+  ],
+  "declared_cardinality": 71,
+  "collection_root": "08f3d26da2f4ad023605d3caf721337718194d0b24af207790f2c85333417d4e",
+  "subtree_root": "449debf774d99cc07ad074ccc07db2f11639b8866804ad0fd79e7da9a3879355",
+  "procedure": "verification/README.md"
+}

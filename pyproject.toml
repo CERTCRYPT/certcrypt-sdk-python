@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "certcrypt-sdk"
+version = "1.0.0"
+description = "Official issuer-side SDK for CERTCRYPT: certify material with a client-side composite post-quantum signature (ECDSA P-256 + ML-DSA-65), and produce the artifacts that let a third party independently evaluate the result offline under public rules, without either your systems or CERTCRYPT remaining online."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+keywords = [
+    "auditability",
+    "certcrypt",
+    "composite-signature",
+    "digital-certification",
+    "fail-closed",
+    "fips-204",
+    "interoperability",
+    "issuer-side",
+    "jcs",
+    "ml-dsa",
+    "offline-verification",
+    "post-quantum",
+    "proof-of-independence",
+    "public-rules",
+    "rfc8785",
+    "sdk",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security :: Cryptography",
+    "Typing :: Typed",
+]
+
+# ECDSA P-256 comes from `ecdsa` rather than `cryptography` on purpose: this SDK
+# must produce byte-identical signatures to the other language bindings, and
+# `cryptography`'s ECDSA uses a random nonce. RFC 6979 deterministic signing is
+# what the conformance family `ecdsa-p256-deterministic` requires.
+dependencies = [
+    "ecdsa>=0.19.2",
+    "dilithium-py>=1.4.0",
+]
+
+[project.urls]
+Homepage = "https://certcrypt.com"
+Documentation = "https://docs.certcrypt.com"
+Repository = "https://github.com/CERTCRYPT/certcrypt-sdk-python"
+
+[project.optional-dependencies]
+# `pip install -e ".[dev]"`. Declared here rather than under [dependency-groups]
+# so plain pip resolves it — the group form needs a PEP 735 aware installer.
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/certcrypt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

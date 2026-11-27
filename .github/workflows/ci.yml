@@ -1,0 +1,106 @@
+# CI for certcrypt-sdk-python — the issuer-side SDK.
+#
+# WHY THIS JOB NEEDS NODE. The cross-binding tests hand a certificate this SDK
+# minted to certcrypt-verifier-toolkit-js and require it to verify —
+# the assertion that makes the language bindings siblings rather than lookalikes.
+# That runs the real JavaScript verifier, so the runner needs Node and a BUILT
+# toolkit checkout, not just Python.
+#
+# THE SIBLING CHECKOUTS ARE REQUIRED, and no flag is needed to make them so. When
+# a sibling is absent, tests/conftest.py turns the skip into a failure naming the
+# missing path — by default, because a suite reporting `passed` having never
+# checked parity would be attesting to something it did not do. This job checks
+# the siblings out, so it cannot pass by skipping the part that matters. The
+# conformance VERSION is checked too, so this job also proves the SDK was run
+# against the contract version it claims.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # The floor declared in pyproject.toml `requires-python`, and current
+        # stable. The floor is what an integrator may actually be running.
+        python: ["3.10", "3.13"]
+
+    steps:
+      - name: Check out the SDK
+        uses: actions/checkout@v4
+        with:
+          path: certcrypt-sdk-python
+
+      - name: Check out the conformance contract
+        uses: actions/checkout@v4
+        with:
+          repository: CERTCRYPT/certcrypt-conformance
+          path: certcrypt-conformance
+
+      - name: Check out the verifier toolkit
+        uses: actions/checkout@v4
+        with:
+          repository: CERTCRYPT/certcrypt-verifier-toolkit-js
+          path: certcrypt-verifier-toolkit-js
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: certcrypt-verifier-toolkit-js/package-lock.json
+
+      - name: Build the verifier toolkit
+        working-directory: certcrypt-verifier-toolkit-js
+        # The cross-binding tests import the toolkit's BUILT output, so a checkout
+        # alone is not enough — an unbuilt sibling reads as a missing one.
+        run: |
+          npm ci
+          npm run build
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: certcrypt-sdk-python/pyproject.toml
+
+      - name: Install
+        working-directory: certcrypt-sdk-python
+        run: pip install -e ".[dev]"
+
+      - name: Tests — the contract is required, skips are failures
+        working-directory: certcrypt-sdk-python
+        run: python -m pytest tests -q
+
+      - name: The built wheel carries no test material
+        working-directory: certcrypt-sdk-python
+        # What ships is decided by the hatch build config, not by the test run. A
+        # stray test module in the wheel is a packaging defect no test catches.
+        # This also pins that py.typed ships: without that marker the type
+        # annotations are invisible downstream, and the `Typing :: Typed`
+        # classifier in pyproject.toml would be claiming something untrue.
+        run: |
+          pip install build
+          python -m build --wheel -o dist_ci
+          python - <<'PY'
+          import glob, sys, zipfile
+          names = zipfile.ZipFile(sorted(glob.glob("dist_ci/*.whl"))[-1]).namelist()
+          leaked = [n for n in names if "test" in n.lower() and "dist-info" not in n]
+          if leaked:
+              sys.exit(f"Test material would be published: {leaked}")
+          if not any(n.endswith("certcrypt/py.typed") for n in names):
+              sys.exit("py.typed is missing: the Typing :: Typed classifier would lie")
+          print(f"wheel clean: {len(names)} files, py.typed present")
+          PY
